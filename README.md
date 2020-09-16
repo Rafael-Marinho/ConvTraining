@@ -25,10 +25,11 @@ Once you labelled the images:
 1) Put all the images and their .txt files with classes coordinates at Model/data/obj (replace the content already there);
 2) Do the same with the classes.txt and classes.names;
 3) Change the parameter classes at the Model/data/obj/obj.data to the number of classes on the classes.txt;
-4) At Model/data/obj.names, insert the same content of classes.names but with "\_" instead of "\ " (replace the content already there);
-5) Run the generate_test.py, generate_train.py with Python (many thanks to The AI Guy for providing us these scripts);
-6) Run the generate_cfg.py with Python (many thanks to The AI Guy for providing me the instructions to code this script);
-7) Add a convolutional neural network to be used as a base (you can get a good one here: https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v3_optimal/yolov4.conv.137)
+4) Insert images and .txt files at Model/data/test, they must be from the same nature of the ones at Model/data/obj (they can be even a subset from them), to be used for the validation during the training process.
+5) At Model/data/obj.names, insert the same content of classes.names but with "\_" instead of "\ " (replace the content already there);
+6) Run the generate_test.py, generate_train.py with Python (many thanks to The AI Guy for providing us these scripts);
+7) Run the generate_cfg.py with Python (many thanks to The AI Guy for providing me the instructions to code this script);
+8) Add a convolutional neural network to be used as a base (you can get a good one here: https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v3_optimal/yolov4.conv.137)
 
 ## Network training:
 On the same folder where is the Model dir, install the Darknet (https://pjreddie.com/darknet/install/). Do it with CUDA resources if you can.
