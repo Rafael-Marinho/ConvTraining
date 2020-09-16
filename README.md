@@ -79,9 +79,9 @@ Take the Model_best.weights, rename it to "Model.weights" and move it to the Net
 
 After that, take the video which you want to activate your brand new convolutional neural network, put at the root of project and rename it to "input.mp4".
 
-And then sit down straight, correct your posture, take a deep breath and run the Activate.py with Python.
+And then sit down straight, correct your posture, take a deep breath, a sip of tea, and run the Activate.py with Python. And relax.
 
-At this point, pay attention at the classes detection performance and not the FPS rate -- after all, you didn't trained your hardware but your convolutional neural network.
+At this point, pay attention at the classes detection performance and not the FPS rate -- after all, you didn't trained your hardware but your convolutional neural network. At the end, a file called output.avi will be done and produced at the same directory, with all the video frames being executed at 20 FPS no matter how long your hardware take to process it (and feel free to hack the hyperparameters to change it).
 
 
 ### That's it. Regards and keep rocking, guys.
