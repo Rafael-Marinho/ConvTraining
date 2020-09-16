@@ -1,7 +1,7 @@
-Carro
-Motocicleta
-Caminhao
-Caminhonete
-Onibus
+Car
+Motorcycle
+Truck
+Pickup
+Bus
 Van
-Bicicleta
+Bicycle
