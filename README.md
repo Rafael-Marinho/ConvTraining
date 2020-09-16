@@ -10,7 +10,7 @@ Cheers to The AI Guy (https://github.com/theAIGuysCode).
 - OpenCV (4.4 or higher);
 - NumPy.
 
-The OpenCV and NumPy are Python packages. You can download them with:
+The OpenCV and NumPy are Python packages. Once you have the Python installed, you can download and install them with:
 
 ```
 pip install opencv-python numpy
