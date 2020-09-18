@@ -36,7 +36,7 @@ On the same folder where is the Model dir, install the Darknet (https://pjreddie
 
 (Seriously, the training with no dedicated GPGPU may take **months** to reach a good couple of weights).
 
-If you are a f...ed up guy like me, you can use a good GPGPU from Google Colab for free (twelve hours for day at most), and if you live in USA, you can even rent processing power as an IaaS. You can access it at https://colab.research.google.com/; and you will need a Google account for it, of course.
+If you are like me and need to work five months only to buy a decent hardware (and still did not done it yet), you can use a good GPGPU from Google Colab for free (twelve hours for day at most), and if you live in USA, you can even rent processing power as an IaaS. You can access it at https://colab.research.google.com/; and you will need a Google account for it, of course.
 
 #### Following these commands, you can download, configure and install Darknet with CUDA resources at Colab (remove the ! and % if you gonna run it into your machine instead):
 
@@ -52,7 +52,7 @@ If you are a f...ed up guy like me, you can use a good GPGPU from Google Colab f
 !make
 ```
 
-#### (IT WILL ONLY WORK IF THE NOTEBOOK IS SET TO USE GPU)
+#### (IT WILL WORK ONLY IF THE NOTEBOOK IS SET TO USE GPU)
 
 If you are using the Colab, you need to upload the files. I recommend you to upload them in your Drive (you're already using your Google account after all, isn't?). So, uploading the files at the root of your Drive, you just need to access it at the Colab by the following command:
 
@@ -73,7 +73,7 @@ So, following the logic of the directories tree and considering you downloaded t
 ... AND that's it. Just let the computer train the neural network for a couple of hours (or even days, it's up to you). Use that time to sleep, work, play a good grunge song, learn Russian, meditate, live, love or think about your Ph.D.
 
 ## Network activation:
-So you trained the weights for a long time. Make it worth by accessing the backup directory and take the weight files (the Model_best.weights is the guy you has been waiting for).
+So you trained the weights for a long time. Make it worth by accessing the backup directory and take the weight files (the Model_best.weights is the guy you have been waiting for).
 
 Take the Model_best.weights, rename it to "Model.weights" and move it to the Networks directory (replace the one there). Also, move the Model.cfg and Model.names to the same directory.
 
