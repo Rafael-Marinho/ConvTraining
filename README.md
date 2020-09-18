@@ -36,7 +36,7 @@ On the same folder where is the Model dir, install the Darknet (https://pjreddie
 
 (Seriously, the training with no dedicated GPGPU may take **months** to reach a good couple of weights).
 
-If you are like me and need to work five months only to buy a decent hardware (and still did not done it yet), you can use a good GPGPU from Google Colab for free (twelve hours for day at most), and if you live in USA, you can even rent processing power as an IaaS. You can access it at https://colab.research.google.com/; and you will need a Google account for it, of course.
+If you are like me and need to work five months only to buy a decent hardware (and still did not done it yet), you can use a good GPGPU from Google Colab for free (twelve hours per day at most, which usually is time enough to get a very nice couple of weights for your network), and if you live in USA, you can even rent processing power as an IaaS. You can access it at https://colab.research.google.com/; and you will need a Google account for it, of course.
 
 #### Following these commands, you can download, configure and install Darknet with CUDA resources at Colab (remove the ! and % if you gonna run it into your machine instead):
 
