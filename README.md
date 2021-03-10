@@ -1,10 +1,8 @@
 # ConvTraining
 This project has been made in purpose to simplify the process of Darknet / YOLO convolutional network training. Go ahead, it's open-source, copyleft and you must feel free to hack it at your desire.
 
-Cheers to The AI Guy (https://github.com/theAIGuysCode).
-
 #### You will need:
-- Darknet and YOLOv4 (other versions must work too, I don't know);
+- Darknet and YOLOv4 (other versions must work too, I did not test on YOLOv5 yet);
 - Python3 (Python2 must work too but it's dead since january 1st 2020, go ahead and bury it and go to Python3 once for all);
 - Cmake;
 - OpenCV (4.4 or higher);
@@ -25,7 +23,7 @@ Once you labelled the images:
 1) Put all the images and their .txt files with classes coordinates at Model/data/obj (replace the content already there);
 2) Do the same with the classes.txt;
 3) Insert images and .txt files at Model/data/test, they must be from the same nature of the ones at Model/data/obj (they can be even a subset from them), to be used for the validation during the training process.
-4) Run the generate_stuff.py with Python (many thanks to The AI Guy for providing us part of the script);
+4) Run the generate_stuff.py with Python (and give me a tip for a better name for it, I haven't been really creative to do it);
 5) Add a convolutional neural network's weight file to be used as a base on /Model and also a weight file (can be the same) on Model/backup named as model_last.weight (you can get a good one here: https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v3_optimal/yolov4.conv.137).
 
 ## Network training:
@@ -33,7 +31,7 @@ On the same folder where is the Model dir, install the Darknet (https://pjreddie
 
 (Seriously, the training with no dedicated GPGPU may take **months** to reach a good couple of weights).
 
-If you are like me and need to work five months only to buy a decent hardware (and still did not done it yet), you can use a good GPGPU from Google Colab for free (twelve hours per day at most, which usually is time enough to get a very nice couple of weights for your network), and if you live in USA, you can even rent processing power as an IaaS. You can access it at https://colab.research.google.com/; and you will need a Google account for it, of course.
+If you are like me and need to work five months only to buy a decent hardware (and still did not done it yet), you can use a good GPGPU from Google Colab for free (twelve hours per day at most, which usually is time enough to get a very nice couple of weights for your network), and if you live in USA or Canada, you can even rent processing power as an IaaS. You can access it at https://colab.research.google.com/; and you will need a Google account for it, of course.
 
 #### Following these commands, you can download, configure and install Darknet with CUDA resources at Colab (remove the ! and % if you gonna run it into your machine instead):
 
@@ -74,11 +72,11 @@ So you trained the weights for a long time. Make it worth by accessing the backu
 
 Take the Model_best.weights, rename it to "Model.weights" and move it to the Networks directory (replace the one there). Also, move the Model.cfg and Model.names to the same directory.
 
-After that, take the video which you want to activate your brand new convolutional neural network, put at the root of project and rename it to "input.mp4".
+You can do it onto a image file or video file, so, after that, take the video or image which you want to activate your brand new convolutional neural network, put at the root of project and rename it to "input.mp4" (if is an video sequence) or 'input.png" (if is an image).
 
-And then sit down straight, correct your posture, take a deep breath, a sip of tea, and run the Activate.py with Python. And relax.
+And then sit down straight, correct your posture, take a deep breath, a sip of tea, and run the Activation_video.py or Activation_image.py with Python, if for video sequence or image respectively. And relax.
 
-At this point, pay attention at the classes detection performance and not the FPS rate -- after all, you didn't trained your hardware but your convolutional neural network. At the end, a file called output.avi will be done and produced at the same directory, with all the video frames being executed at 20 FPS no matter how long your hardware take to process it (and feel free to hack the hyperparameters to change it).
+At this point, pay attention at the classes detection performance and not the FPS rate -- after all, you didn't trained your hardware but your convolutional neural network. At the end, a file called output.avi (if video sequence) or output.png (if an image) will be done and produced at the same directory, with all the video frames being executed at 20 FPS no matter how long your hardware take to process it (and feel free to hack the hyperparameters to change it).
 
 
 ### That's it. Regards and keep rocking, guys.
