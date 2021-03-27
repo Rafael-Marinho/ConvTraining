@@ -76,7 +76,7 @@ You can do it onto a image file, a batch of image files or a video file, so, aft
 
 And then sit down straight, correct your posture, take a deep breath, a sip of tea, and run the Activation_video.py, or Activation_image.py or Activation_images.py with Python, if for video sequence, a single image or a batch of images, respectively. And relax.
 
-At this point, pay attention at the classes detection performance and not the FPS rate -- after all, you didn't trained your hardware but your convolutional neural network. At the end, a file called output.avi (if video sequence) or output.png (if an image) will be done and produced at the same directory, with all the video frames being executed at 20 FPS no matter how long your hardware take to process it (and feel free to hack the hyperparameters to change it).
+At this point, pay attention at the classes detection performance and not the FPS rate -- after all, you didn't trained your hardware but your convolutional neural network. At the end, a file called output.avi (if video sequence) or output.png (if an image) will be done and produced at the same directory, with all the video frames being executed at 20 FPS no matter how long your hardware take to process it (and feel free to hack the hyperparameters to change it). If you did it in a batch of images (with Activation_images.py), the outputs will all be insider the output directory, of course, with the same name of the original file inside the input directory (and no: the files aren't moved from a directory to another; the original file are all preserved).
 
 
 ### That's it. Regards and keep rocking, guys.
