@@ -15,7 +15,7 @@ pip install opencv-python numpy
 ```
 
 ## Data labelling:
-You can do it anyway you like; I used LabelImg (https://github.com/tzutalin/labelImg) but there are other, more automatic methods.
+You can do it anyway you like; I used LabelImg (https://github.com/tzutalin/labelImg) but there are others, more automatic methods.
 #### ALL THE IMAGES MUST BE .JPG FORMAT.
 
 ## Network configuration and stuff:
@@ -72,9 +72,9 @@ So you trained the weights for a long time. Make it worth by accessing the backu
 
 Take the Model_best.weights, rename it to "Model.weights" and move it to the Networks directory (replace the one there). Also, move the Model.cfg and Model.names to the same directory.
 
-You can do it onto a image file or video file, so, after that, take the video or image which you want to activate your brand new convolutional neural network, put at the root of project and rename it to "input.mp4" (if is an video sequence) or 'input.png" (if is an image).
+You can do it onto a image file, a batch of image files or a video file, so, after that, take the video or image which you want to activate your brand new convolutional neural network, put at the root of project and rename it to "input.mp4" (if is an video sequence) or 'input.png" (if is an image). If it is a batch of images, just put them (JPG files) inside a directory named "input", and also create a directory named output.
 
-And then sit down straight, correct your posture, take a deep breath, a sip of tea, and run the Activation_video.py or Activation_image.py with Python, if for video sequence or image respectively. And relax.
+And then sit down straight, correct your posture, take a deep breath, a sip of tea, and run the Activation_video.py, or Activation_image.py or Activation_images.py with Python, if for video sequence, a single image or a batch of images, respectively. And relax.
 
 At this point, pay attention at the classes detection performance and not the FPS rate -- after all, you didn't trained your hardware but your convolutional neural network. At the end, a file called output.avi (if video sequence) or output.png (if an image) will be done and produced at the same directory, with all the video frames being executed at 20 FPS no matter how long your hardware take to process it (and feel free to hack the hyperparameters to change it).
 
