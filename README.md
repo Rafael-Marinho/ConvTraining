@@ -17,14 +17,16 @@ pip install opencv-python numpy
 ## Data labelling:
 You can do it anyway you like; I used LabelImg (https://github.com/tzutalin/labelImg) but there are others, more automatic methods.
 #### ALL THE IMAGES MUST BE .JPG FORMAT.
+Why only .jpg? The generate_stuff.py will look only for jpg files, once its a format Darknet has no problems to deal with. I know it doesn't work with .tif files as well; you can hack the generate_stuff.py to accept another formats for experimentation (there are two lines at the very end of the file, just use a Ctrl+F, look for "jpg" and you will know what to do, trust me), and let me know what more Darknet can deal with.
 
 ## Network configuration and stuff:
 Once you labelled the images:
 1) Put all the images and their .txt files with classes coordinates at Model/data/obj (replace the content already there);
 2) Do the same with the classes.txt;
-3) Insert images and .txt files at Model/data/test, they must be from the same nature of the ones at Model/data/obj (they can be even a subset from them), to be used for the validation during the training process.
+3) Insert images and .txt files at Model/data/test, they must be from the same nature of the ones at Model/data/obj (they can be even a subset from them, just be aware of the overfitting from it), to be used for the validation during the training process.
 4) Run the generate_stuff.py with Python (and give me a tip for a better name for it, I haven't been really creative to do it);
-5) Add a convolutional neural network's weight file to be used as a base on /Model and also a weight file (can be the same) on Model/backup named as model_last.weight (you can get a good one here: https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v3_optimal/yolov4.conv.137).
+5) Rename the desirable CFG file to model.cfg: if you gonna train a YOLOv4 file, rename the model_full.cfg to model.cfg, or if you gonna train a YOLOv4tiny file, rename the model_tiny.cfg to model.cfg;
+6) Add a convolutional neural network's weight file to be used as a base on Model/backup named as model_last.weight, it can YOLOv4 or YOLOv4tiny (you can get a good YOLOv4 here: https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v3_optimal/yolov4.conv.137, and also a good YOLOv4tiny here: https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v4_pre/yolov4-tiny.conv.29).
 
 ## Network training:
 On the same folder where is the Model dir, install the Darknet (https://pjreddie.com/darknet/install/). Do it with CUDA resources if you can.
