@@ -1,7 +1,0 @@
-Car
-Motorcycle
-Truck
-Pickup
-Bus
-Van
-Bicycle
