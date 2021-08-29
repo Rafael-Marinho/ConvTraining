@@ -7,16 +7,15 @@ from numpy import argmax
 image_files = []
 chdir(path.join("input"))
 for filename in listdir(getcwd()):
-    if filename.endswith(".jpg"):
-        image_files.append(filename)
+    image_files.append(filename)
 chdir("..")
 
 # Load the convolutional neural network and its architecture file:
-net = dnn.readNet("Networks/Model.weights", "Networks/Model.cfg")
+net = dnn.readNet("Networks/model.weights", "Networks/model.cfg")
 
 # Load the classes:
 classes = []
-with open("Networks/Model.names", 'r') as f:
+with open("Networks/model.names", 'r') as f:
     classes = f.read().splitlines()
 
 # Run the activation in every JPG file inside the activation path:
@@ -56,8 +55,9 @@ for image in image_files:
             x, y, w, h = boxes[i]
             label = str(classes[class_ids[i]])
             confidence = str(round(confidences[i], 2))
-            rectangle(img, (x, y), ((x + w), (y + h)), (0, 255, 0), 2)
-            putText(img, (label + ' ' + confidence), (x, (y + 20)), FONT_HERSHEY_PLAIN, 1, (200, 0, 180), 2)
+            rectangle(img, (x, y), ((x + w), (y + h)), (0, 0, 200), 2)
+            rectangle(img, (x, y - 20), (x + ((len(label) + len(str(confidence))) * 10), y), (0, 0, 200), -1)
+            putText(img, (label + ' ' + confidence), (x, (y - 5)), FONT_HERSHEY_PLAIN, 1, (255, 255, 255), 2)
 
     # Save the output image:
     imwrite(("output/" + image), img)
