@@ -3,15 +3,15 @@ from numpy import argmax
 
 
 # Load the convolutional neural network and its architecture file:
-net = dnn.readNet("Networks/Model.weights", "Networks/Model.cfg")
+net = dnn.readNet("Networks/model.weights", "Networks/model.cfg")
 
 # Load the classes:
 classes = []
-with open("Networks/Model.names", 'r') as f:
+with open("Networks/model.names", 'r') as f:
     classes = f.read().splitlines()
 
 # Load image:
-img = imread("input.png")
+img = imread("input.jpg")
 
 # Execution variables, pointers and stuff:
 height, width, _ = img.shape
@@ -27,7 +27,7 @@ for output in net.forward(net.getUnconnectedOutLayersNames()):
         scores = detection[5:]
         class_id = argmax(scores)
         confidence = scores[class_id]
-        if confidence > 0.5:
+        if (confidence > 0.5):
             center_x = int(detection[0] * width)
             center_y = int(detection[1] * height)
             w = int(detection[2] * width)
@@ -45,8 +45,9 @@ if (len(indexes) > 0):
         x, y, w, h = boxes[i]
         label = str(classes[class_ids[i]])
         confidence = str(round(confidences[i], 2))
-        rectangle(img, (x, y), ((x + w), (y + h)), (0, 255, 0), 2)
-        putText(img, (label + ' ' + confidence), (x, (y + 20)), FONT_HERSHEY_PLAIN, 1, (200, 0, 180), 2)
+        rectangle(img, (x, y), ((x + w), (y + h)), (0, 0, 200), 2)
+        rectangle(img, (x, y - 20), (x + ((len(label) + len(str(confidence))) * 10), y), (0, 0, 200), -1)
+        putText(img, (label + ' ' + confidence), (x, (y - 5)), FONT_HERSHEY_PLAIN, 1, (255, 255, 255), 2)
 
 # Display the frames and the drawed content, and then save the output image:
 imshow("DATA", img)
